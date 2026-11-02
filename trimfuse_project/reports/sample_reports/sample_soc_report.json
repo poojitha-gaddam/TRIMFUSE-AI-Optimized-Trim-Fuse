@@ -1,0 +1,201 @@
+{
+  "chip": "SoC",
+  "mode": "dataset",
+  "die_id": "SOC-005713",
+  "input_features": {
+    "cpm_path_delay_ps": 284.48,
+    "derivative": "SoC-Std",
+    "die_x": 16,
+    "die_y": 11,
+    "iddq_25C_mA": 190.18,
+    "pcm_mobility_rel": 1.0452,
+    "pcm_rs_ohm_sq": 313.28,
+    "pcm_tox_A": 19.366,
+    "pcm_vth_n_mV": 421.38,
+    "pcm_vth_p_mV": -476.55,
+    "radius_mm": 77.32,
+    "ro_freq_MHz": 1049.18,
+    "x_mm": 77.0,
+    "y_mm": 7.0
+  },
+  "predictions": {
+    "slowest_core_fmax_GHz": {
+      "model": "soc_slowest_fmax",
+      "model_version": "1.0.0",
+      "prediction": 3.3598759375,
+      "target": "slowest_healthy_fmax_GHz",
+      "evaluation": {
+        "test_rows": 1232,
+        "train_rows": 4928,
+        "split": "GroupShuffleSplit by wafer_id",
+        "mae": 0.02774035670525419,
+        "rmse": 0.03513199330768022,
+        "r2": 0.9743386624254499
+      },
+      "feature_names": [
+        "die_x",
+        "die_y",
+        "x_mm",
+        "y_mm",
+        "radius_mm",
+        "pcm_vth_n_mV",
+        "pcm_vth_p_mV",
+        "pcm_rs_ohm_sq",
+        "pcm_tox_A",
+        "pcm_mobility_rel",
+        "ro_freq_MHz",
+        "cpm_path_delay_ps",
+        "iddq_25C_mA",
+        "derivative"
+      ],
+      "prediction_type": "model_prediction",
+      "input_warnings": []
+    },
+    "worst_healthy_vmin_2GHz_mV": {
+      "model": "soc_worst_vmin",
+      "model_version": "1.0.0",
+      "prediction": 607.0682833333334,
+      "target": "worst_healthy_vmin_2GHz_mV",
+      "evaluation": {
+        "test_rows": 1232,
+        "train_rows": 4928,
+        "split": "GroupShuffleSplit by wafer_id",
+        "mae": 4.4302654387669955,
+        "rmse": 5.527617659951367,
+        "r2": 0.951259380065253
+      },
+      "feature_names": [
+        "die_x",
+        "die_y",
+        "x_mm",
+        "y_mm",
+        "radius_mm",
+        "pcm_vth_n_mV",
+        "pcm_vth_p_mV",
+        "pcm_rs_ohm_sq",
+        "pcm_tox_A",
+        "pcm_mobility_rel",
+        "ro_freq_MHz",
+        "cpm_path_delay_ps",
+        "iddq_25C_mA",
+        "derivative"
+      ],
+      "prediction_type": "model_prediction",
+      "input_warnings": []
+    }
+  },
+  "warnings": [
+    "SKU suggestion is a per-die feasibility recommendation, not a globally demand-optimized production allocation."
+  ],
+  "label_comparisons": {
+    "slowest_healthy_fmax_GHz": {
+      "source_label": 3.3703,
+      "prediction": 3.3598759375,
+      "absolute_error": 0.010424062499999831
+    },
+    "worst_healthy_vmin_2GHz_mV": {
+      "source_label": 607.62,
+      "prediction": 607.0682833333334,
+      "absolute_error": 0.5517166666666071
+    }
+  },
+  "engineering_checks": {
+    "rule_based_sku": "SoC-Std",
+    "l2_repairable": true,
+    "cores_disabled_mask": "0x0C"
+  },
+  "sku_recommendation": {
+    "healthy_cores": 7,
+    "slowest_healthy_core_fmax_GHz": 3.3703,
+    "recommended_sku": "SoC-Std",
+    "selection_method": "highest-price feasible SKU; per-die greedy recommendation",
+    "global_demand_optimization": "not run for a single-die request; use batch allocation for demand-constrained optimization"
+  },
+  "memory_repair_summary": {
+    "failing_bits_total": 2,
+    "assessment_l2_repairable": true
+  },
+  "memory_repair_allocations": [
+    {
+      "array_id": "L2ARR-00000",
+      "array": "L2_slice0",
+      "allocation": {
+        "repairable": true,
+        "minimum_rows": 4,
+        "minimum_cols": 1,
+        "rows": [
+          5,
+          49,
+          292,
+          468
+        ],
+        "cols": [
+          204
+        ],
+        "spare_rows": 4,
+        "spare_cols": 4
+      }
+    }
+  ],
+  "source_record": {
+    "die_id": "SOC-005713",
+    "lot_id": "QA4",
+    "wafer_id": "QA4-W04",
+    "derivative": "SoC-Std",
+    "die_x": 16,
+    "die_y": 11,
+    "x_mm": 77.0,
+    "y_mm": 7.0,
+    "radius_mm": 77.32,
+    "pcm_vth_n_mV": 421.38,
+    "pcm_vth_p_mV": -476.55,
+    "pcm_rs_ohm_sq": 313.28,
+    "pcm_tox_A": 19.366,
+    "pcm_mobility_rel": 1.0452,
+    "ro_freq_MHz": 1049.18,
+    "cpm_path_delay_ps": 284.48,
+    "iddq_25C_mA": 190.18,
+    "core0_defect": false,
+    "core0_fmax_GHz": 3.4192,
+    "core0_vmin_2GHz_mV": 598.25,
+    "core1_defect": false,
+    "core1_fmax_GHz": 3.4157,
+    "core1_vmin_2GHz_mV": 595.76,
+    "core2_defect": false,
+    "core2_fmax_GHz": 3.3703,
+    "core2_vmin_2GHz_mV": 607.62,
+    "core3_defect": true,
+    "core3_fmax_GHz": null,
+    "core3_vmin_2GHz_mV": null,
+    "core4_defect": false,
+    "core4_fmax_GHz": 3.4221,
+    "core4_vmin_2GHz_mV": 591.11,
+    "core5_defect": false,
+    "core5_fmax_GHz": 3.4702,
+    "core5_vmin_2GHz_mV": 600.43,
+    "core6_defect": false,
+    "core6_fmax_GHz": 3.4339,
+    "core6_vmin_2GHz_mV": 599.25,
+    "core7_defect": false,
+    "core7_fmax_GHz": 3.4121,
+    "core7_vmin_2GHz_mV": 591.6,
+    "l2_slice0_fail_bits": 1,
+    "l2_slice1_fail_bits": 1,
+    "l2_slice2_fail_bits": 0,
+    "l2_slice3_fail_bits": 0,
+    "l2_repairable": true,
+    "conv_speed_test_time_ms": 390.1,
+    "sku_rule_based": "SoC-Std",
+    "avs_voltage_bin": 1,
+    "avs_voltage_V": 0.7625,
+    "cores_disabled_mask": "0x0C",
+    "power_at_sku_W": 10.974
+  },
+  "anomaly_screen": {
+    "score": 0.019536438472773643,
+    "is_anomaly": false,
+    "method": "IsolationForest",
+    "warning": "Screening flag only; not a defect diagnosis."
+  },
+  "sample_report_notice": "Illustrative report generated from the supplied synthetic assessment dataset; not a physical calibration record."
+}

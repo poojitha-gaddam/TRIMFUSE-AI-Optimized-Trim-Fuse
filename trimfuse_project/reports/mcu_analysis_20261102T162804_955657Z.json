@@ -1,0 +1,262 @@
+{
+  "chip": "MCU",
+  "mode": "dataset",
+  "die_id": "MCU-000120",
+  "input_features": {
+    "bg_untrim_V": 1.17222,
+    "derivative": "MCU-A",
+    "die_x": 13,
+    "die_y": 8,
+    "hsi_untrim_MHz": 17.297,
+    "ldo_untrim_V": 1.08178,
+    "package": "QFN48",
+    "pcm_mobility_rel": 1.038,
+    "pcm_rs_ohm_sq": 276.02,
+    "pcm_tox_A": 20.688,
+    "pcm_vth_n_mV": 431.53,
+    "pcm_vth_p_mV": -478.35,
+    "radius_mm": 32.98,
+    "temp_grade": "industrial",
+    "ts_cal1_30C_counts": 1020,
+    "x_mm": 8.0,
+    "y_mm": -32.0
+  },
+  "predictions": {
+    "bg_trim_code_opt": {
+      "model": "mcu_bg",
+      "model_version": "1.0.0",
+      "prediction": 45.54312499999999,
+      "target": "bg_trim_code_opt",
+      "evaluation": {
+        "test_rows": 1684,
+        "train_rows": 6736,
+        "split": "GroupShuffleSplit by wafer_id",
+        "mae": 0.41492286121038413,
+        "rmse": 1.0113946444031174,
+        "r2": 0.9615116485830997
+      },
+      "feature_names": [
+        "bg_untrim_V",
+        "hsi_untrim_MHz",
+        "ldo_untrim_V",
+        "ts_cal1_30C_counts",
+        "die_x",
+        "die_y",
+        "x_mm",
+        "y_mm",
+        "radius_mm",
+        "pcm_vth_n_mV",
+        "pcm_vth_p_mV",
+        "pcm_rs_ohm_sq",
+        "pcm_tox_A",
+        "pcm_mobility_rel",
+        "derivative",
+        "package",
+        "temp_grade"
+      ],
+      "prediction_type": "model_prediction",
+      "input_warnings": [],
+      "proposed_code": 46
+    },
+    "hsi_trim_code_opt": {
+      "model": "mcu_hsi",
+      "model_version": "1.0.0",
+      "prediction": 28.13512936827957,
+      "target": "hsi_trim_code_opt",
+      "evaluation": {
+        "test_rows": 1684,
+        "train_rows": 6736,
+        "split": "GroupShuffleSplit by wafer_id",
+        "mae": 0.9156054350889509,
+        "rmse": 1.243378520327915,
+        "r2": 0.996711654918818
+      },
+      "feature_names": [
+        "bg_untrim_V",
+        "hsi_untrim_MHz",
+        "ldo_untrim_V",
+        "ts_cal1_30C_counts",
+        "die_x",
+        "die_y",
+        "x_mm",
+        "y_mm",
+        "radius_mm",
+        "pcm_vth_n_mV",
+        "pcm_vth_p_mV",
+        "pcm_rs_ohm_sq",
+        "pcm_tox_A",
+        "pcm_mobility_rel",
+        "derivative",
+        "package",
+        "temp_grade"
+      ],
+      "prediction_type": "model_prediction",
+      "input_warnings": [],
+      "proposed_code": 28
+    },
+    "ldo_trim_code_opt": {
+      "model": "mcu_ldo",
+      "model_version": "1.0.0",
+      "prediction": 20.003916666666665,
+      "target": "ldo_trim_code_opt",
+      "evaluation": {
+        "test_rows": 1684,
+        "train_rows": 6736,
+        "split": "GroupShuffleSplit by wafer_id",
+        "mae": 0.17067992705648055,
+        "rmse": 0.2690016320790686,
+        "r2": 0.9802808216556009
+      },
+      "feature_names": [
+        "bg_untrim_V",
+        "hsi_untrim_MHz",
+        "ldo_untrim_V",
+        "ts_cal1_30C_counts",
+        "die_x",
+        "die_y",
+        "x_mm",
+        "y_mm",
+        "radius_mm",
+        "pcm_vth_n_mV",
+        "pcm_vth_p_mV",
+        "pcm_rs_ohm_sq",
+        "pcm_tox_A",
+        "pcm_mobility_rel",
+        "derivative",
+        "package",
+        "temp_grade"
+      ],
+      "prediction_type": "model_prediction",
+      "input_warnings": [],
+      "proposed_code": 20
+    },
+    "ts_cal2_110C_counts": {
+      "model": "mcu_ts_hot",
+      "model_version": "1.0.0",
+      "prediction": 1281.656569071506,
+      "target": "ts_cal2_110C_counts",
+      "evaluation": {
+        "test_rows": 1684,
+        "train_rows": 6736,
+        "split": "GroupShuffleSplit by wafer_id",
+        "mae": 3.4181957227362756,
+        "rmse": 4.286743430119386,
+        "r2": 0.9385908072852132
+      },
+      "feature_names": [
+        "bg_untrim_V",
+        "hsi_untrim_MHz",
+        "ldo_untrim_V",
+        "ts_cal1_30C_counts",
+        "die_x",
+        "die_y",
+        "x_mm",
+        "y_mm",
+        "radius_mm",
+        "pcm_vth_n_mV",
+        "pcm_vth_p_mV",
+        "pcm_rs_ohm_sq",
+        "pcm_tox_A",
+        "pcm_mobility_rel",
+        "derivative",
+        "package",
+        "temp_grade"
+      ],
+      "prediction_type": "model_prediction",
+      "input_warnings": []
+    }
+  },
+  "warnings": [
+    "Trim codes are predictions; tester verification is required before any OTP programming."
+  ],
+  "trim_estimates": {
+    "bandgap": {
+      "estimated_sort_V": 1.20022,
+      "measured_sort_V": 1.20044,
+      "absolute_error_V": 0.00021999999999988695
+    },
+    "hsi": {
+      "estimated_sort_MHz": 16.051616,
+      "measured_sort_MHz": 15.99124,
+      "absolute_error_MHz": 0.06037599999999976
+    },
+    "ldo": {
+      "estimated_sort_V": 1.10178,
+      "measured_sort_V": 1.10007,
+      "absolute_error_V": 0.0017099999999998783
+    },
+    "status": "estimated_from_documented_trim_step; measured values are source-record observations"
+  },
+  "engineering_checks": {
+    "sort_pass": true,
+    "final_pass": true,
+    "measured_final_bandgap_V": 1.20154,
+    "predicted_trim_is_not_physical_calibration": true
+  },
+  "fuse_validation": {
+    "valid": true,
+    "errors": [],
+    "decoded_fields": {
+      "BG_TRIM": 46,
+      "HSI_TRIM": 28,
+      "LDO_TRIM": 20,
+      "TS_CAL1": 1020,
+      "FLASH_SIZE": 1,
+      "PERIPH_EN": 255,
+      "TEMP_GRADE": 0,
+      "DEBUG_LOCK": 1,
+      "RDP": 0,
+      "RESERVED": 0
+    }
+  },
+  "source_record": {
+    "die_id": "MCU-000120",
+    "lot_id": "MA1",
+    "wafer_id": "MA1-W01",
+    "derivative": "MCU-A",
+    "die_x": 13,
+    "die_y": 8,
+    "x_mm": 8.0,
+    "y_mm": -32.0,
+    "radius_mm": 32.98,
+    "pcm_vth_n_mV": 431.53,
+    "pcm_vth_p_mV": -478.35,
+    "pcm_rs_ohm_sq": 276.02,
+    "pcm_tox_A": 20.688,
+    "pcm_mobility_rel": 1.038,
+    "package": "QFN48",
+    "temp_grade": "industrial",
+    "latent_defect": false,
+    "bg_untrim_V": 1.17222,
+    "bg_trim_code_opt": 46,
+    "bg_trimmed_sort_V": 1.20044,
+    "bg_conv_iterations": 7,
+    "hsi_untrim_MHz": 17.297,
+    "hsi_trim_code_opt": 28,
+    "hsi_trimmed_sort_MHz": 15.99124,
+    "hsi_conv_iterations": 9,
+    "ldo_untrim_V": 1.08178,
+    "ldo_trim_code_opt": 20,
+    "ldo_trimmed_sort_V": 1.10007,
+    "ldo_conv_iterations": 6,
+    "ts_cal1_30C_counts": 1020,
+    "ts_slope_counts_per_C_true": 3.2433,
+    "ts_cal2_110C_counts": 1281,
+    "ts_cal2_measured_on_tester": false,
+    "sram_fail_bits": 0,
+    "sram_repairable": true,
+    "conv_trim_time_ms": 32.4,
+    "sort_pass": true,
+    "bg_final_V": 1.20154,
+    "hsi_final_MHz": 15.97629,
+    "ldo_final_V": 1.1006,
+    "final_pass": true,
+    "fuse_map_hex": "0x000002FF4FF2872E"
+  },
+  "anomaly_screen": {
+    "score": 0.039081219749215135,
+    "is_anomaly": false,
+    "method": "IsolationForest",
+    "warning": "Screening flag only; not a defect diagnosis."
+  }
+}
